@@ -8,6 +8,7 @@ import {
   useReducedMotion,
   useScroll,
 } from "motion/react";
+import { BrandMark } from "@/components/brand-mark";
 import { MicroButton } from "@/components/amicro";
 import { StaggeredMenu } from "@/components/react-bits/StaggeredMenu";
 import { MARKETING_NAV } from "@/lib/nav";
@@ -58,9 +59,7 @@ export function SiteHeader() {
       >
         <div className="pointer-events-auto mx-auto mt-4 flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border border-white/12 bg-[#0a0a0a]/72 px-3 pl-4 shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl">
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white text-[11px] font-bold tracking-[0.12em] text-neutral-950">
-              G
-            </span>
+            <BrandMark size={32} priority className="h-8 w-8" />
             <span className="text-[15px] font-semibold tracking-tight text-white">
               {SITE.name}
             </span>

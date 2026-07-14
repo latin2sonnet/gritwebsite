@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 import { MARKETING_NAV } from "@/lib/nav";
 import { SITE } from "@/lib/content";
 
@@ -7,9 +8,7 @@ export function SiteFooter() {
     <footer className="border-t border-white/10 py-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md border border-white/15 bg-white/[0.04] text-[11px] font-bold tracking-[0.14em] text-white">
-            G
-          </span>
+          <BrandMark size={32} className="h-8 w-8" />
           <div>
             <p className="text-sm font-semibold tracking-tight text-white">
               {SITE.name}

@@ -14,6 +14,7 @@ import React, {
 } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { BrandMark } from "@/components/brand-mark";
 import { cn } from "@/lib/utils";
 
 export interface StaggeredMenuItem {
@@ -512,9 +513,7 @@ export function StaggeredMenu({
             className="sm-logo pointer-events-auto flex items-center gap-2.5 select-none"
             onClick={closeMenu}
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-md border border-white/15 bg-white/[0.04] text-[11px] font-bold tracking-[0.14em] text-white">
-              G
-            </span>
+            <BrandMark size={32} className="h-8 w-8" />
             <span className="text-[15px] font-semibold tracking-tight text-white">
               {brandLabel}
             </span>
