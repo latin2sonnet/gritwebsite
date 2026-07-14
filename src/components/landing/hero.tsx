@@ -59,13 +59,15 @@ export function Hero() {
         <div className="relative self-center md:col-span-7">
           <Reveal delay={0.12}>
             <div className="relative mx-auto w-full max-w-[34rem] md:max-w-none">
+              {/* Solid light-matched plate: no alpha cutout, natural photo shadow only */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/hero-phone.webp"
                 alt="GRIT equipment ID on phone: unit identified with confidence and fault advice"
                 width={1152}
                 height={864}
-                className="relative z-[1] mx-auto h-auto w-full max-w-full drop-shadow-[0_28px_64px_rgba(15,17,21,0.18)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.02]"
+                className="relative z-[1] mx-auto h-auto w-full max-w-full select-none"
+                draggable={false}
               />
             </div>
           </Reveal>
