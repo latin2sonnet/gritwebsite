@@ -9,10 +9,14 @@ export function Bento() {
     <section id="product" className="py-28 md:py-40">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
-          <div className="flex flex-col gap-4 md:max-w-3xl">
+          <div className="flex flex-col gap-5 md:max-w-3xl">
             <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
               From plate to procedure without the PDF hunt.
             </h2>
+            <p className="max-w-[46ch] text-[15px] leading-relaxed text-neutral-400 md:text-base">
+              Capture, identify, ground the book, answer. Every cell below is a
+              job the product does so you stay on the floor.
+            </p>
           </div>
         </Reveal>
 

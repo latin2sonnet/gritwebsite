@@ -35,8 +35,8 @@ export function CtaBand() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mx-auto mt-6 max-w-[42ch] text-base leading-relaxed text-neutral-600 md:text-lg">
-                Built for techs who live next to the equipment. Request access
-                and be first when GRIT opens the door.
+                Field first. Book is law. Stay on site. Clear and move. Request
+                access if that is how your crew should work.
               </p>
             </Reveal>
             <Reveal delay={0.18}>

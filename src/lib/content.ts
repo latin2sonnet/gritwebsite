@@ -144,3 +144,38 @@ export const SCENARIOS = [
     image: "/images/story-floor.webp",
   },
 ] as const;
+
+/** Core customer values GRIT stands for */
+export const VALUES = [
+  {
+    title: "Field first",
+    body: "Designed for the cabinet, the noise, and the gloves. Not a desk product wearing a hard hat.",
+  },
+  {
+    title: "The book is law",
+    body: "Answers stay grounded in the manual for that unit. No forum folklore. No generic AI shrug.",
+  },
+  {
+    title: "Stay on site",
+    body: "Every minute walking to the trailer is a minute the line stays cold. GRIT keeps you at the iron.",
+  },
+  {
+    title: "Clear and move",
+    body: "Fault code to next step. Identify, ask, act. You are paid to fix gear, not spelunk PDFs.",
+  },
+] as const;
+
+export const COMPARE = {
+  without: [
+    "Hunt binders and shared drives for the right PDF",
+    "Guess which forum thread matches your model",
+    "Walk back to the trailer while the crew waits",
+    "Pull boards on gut feel when the code is unfamiliar",
+  ],
+  withGrit: [
+    "Scan the plate where you stand",
+    "Lock the manual for that make and model",
+    "Ask the fault in plain language",
+    "Follow model-specific steps and clear it",
+  ],
+} as const;

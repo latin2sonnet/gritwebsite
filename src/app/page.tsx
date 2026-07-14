@@ -1,8 +1,10 @@
 import { SiteHeader } from "@/components/landing/site-header";
 import { Hero } from "@/components/landing/hero";
 import { DomainLoop } from "@/components/landing/domain-loop";
+import { Values } from "@/components/landing/values";
 import { Outcomes } from "@/components/landing/outcomes";
 import { Bento } from "@/components/landing/bento";
+import { Compare } from "@/components/landing/compare";
 import { EquipmentAccordion } from "@/components/landing/equipment-accordion";
 import { PinStory } from "@/components/landing/pin-story";
 import { ScrubManifesto } from "@/components/landing/scrub-manifesto";
@@ -12,11 +14,9 @@ import { SiteFooter } from "@/components/landing/site-footer";
 
 /**
  * design_plan
- * Vibe: monochrome blueprint industrial (not flat grey SaaS)
- * Hero: editorial split, pain line, conversion CTAs
- * Interest: outcomes strip + gapless bento + equipment accordion
- * Desire: GSAP pin path + scrub manifesto
- * Action: white high-contrast access band
+ * Character: dense industrial monochrome, interactive DotGrid, values-led
+ * AIDA: hero → domains → values → outcomes → bento → compare → equipment
+ *       → pin path → manifesto → proof → CTA
  */
 
 export default function LandingPage() {
@@ -25,8 +25,10 @@ export default function LandingPage() {
       <SiteHeader />
       <Hero />
       <DomainLoop />
+      <Values />
       <Outcomes />
       <Bento />
+      <Compare />
       <EquipmentAccordion />
       <PinStory />
       <ScrubManifesto />

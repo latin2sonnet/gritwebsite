@@ -8,44 +8,32 @@ import { SITE } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden pt-6 md:pt-24">
-      {/* Interactive React Bits-style field (pointer-events free; tracks window) */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        {/* CSS fallback lattice if canvas is late / reduced-motion first paint */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, rgba(210,210,200,0.72) 1.35px, transparent 1.45px)",
-            backgroundSize: "22px 22px",
-            backgroundPosition: "center center",
-          }}
-          aria-hidden
+    <section className="relative isolate min-h-[100dvh] overflow-hidden pt-6 md:pt-24">
+      {/* Interactive DotGrid only - no static CSS lattice masking motion */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[#0a0a0a]">
+        <DotGrid
+          className="opacity-100"
+          dotSize={2.4}
+          gap={26}
+          baseColor="#5c5c56"
+          activeColor="#ffffff"
+          proximity={200}
+          glowStrength={1.6}
+          baseOpacity={0.55}
+          activeOpacity={1}
+          returnDuration={0.35}
+          waveSpeed={0.65}
         />
-        <div className="absolute inset-0">
-          <DotGrid
-            dotSize={3.2}
-            gap={22}
-            baseColor="#c4c4ba"
-            activeColor="#ffffff"
-            proximity={180}
-            baseOpacity={0.85}
-            activeOpacity={1}
-            returnDuration={0.4}
-            speedTrigger={80}
-          />
-        </div>
-        {/* Soft lift so it never reads pure noir ink */}
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,255,0.12),transparent_55%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(255,255,255,0.08),transparent_45%)]"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_40%,rgba(255,255,255,0.07),transparent_45%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_85%_30%,rgba(255,255,255,0.06),transparent_40%)]"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0b0b0b] to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/80 to-transparent"
           aria-hidden
         />
       </div>
@@ -59,7 +47,7 @@ export function Hero() {
             direction="bottom"
             delay={90}
             stepDuration={0.3}
-            className="max-w-xl text-balance text-[clamp(2.5rem,4.8vw,4rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]"
+            className="max-w-xl text-balance text-[clamp(2.5rem,4.8vw,4rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.55)]"
           />
 
           <Reveal delay={0.28}>
@@ -88,6 +76,25 @@ export function Hero() {
                 accentClass="text-white"
               />
             </div>
+          </Reveal>
+
+          <Reveal delay={0.48}>
+            <dl className="mt-12 grid grid-cols-2 gap-4 border-t border-white/10 pt-8 sm:grid-cols-3">
+              {[
+                { k: "Scan", v: "Plate" },
+                { k: "Lock", v: "Manual" },
+                { k: "Clear", v: "Fault" },
+              ].map((item) => (
+                <div key={item.k}>
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                    {item.k}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold text-white">
+                    {item.v}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </Reveal>
         </div>
 

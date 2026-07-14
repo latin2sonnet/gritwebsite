@@ -9,9 +9,15 @@ export function Outcomes() {
     <section className="py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
-          <h2 className="max-w-3xl text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
-            Your shift gets shorter when the book is already open.
-          </h2>
+          <div className="max-w-3xl">
+            <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
+              Your shift gets shorter when the book is already open.
+            </h2>
+            <p className="mt-5 max-w-[42ch] text-[15px] leading-relaxed text-neutral-400">
+              Three outcomes plant leads care about: less walking, less wrong
+              docs, less guessing when the code hits the panel.
+            </p>
+          </div>
         </Reveal>
 
         <div className="mt-12 grid gap-3 md:grid-cols-12">

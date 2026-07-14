@@ -1,6 +1,10 @@
-# GRITSITE
+# gritwebsite
 
 Premium black-and-white marketing site for **GRIT** - field AI that scans industrial equipment, finds manuals, and answers troubleshooting questions from the book.
+
+**Production:** [https://gritwebsite-three.vercel.app](https://gritwebsite-three.vercel.app)  
+**Vercel project:** `gritwebsite`  
+**Local path:** `Desktop/gritsite` (package name `gritwebsite`)
 
 ## Stack
 
