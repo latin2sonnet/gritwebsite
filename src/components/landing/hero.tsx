@@ -71,30 +71,26 @@ export function Hero() {
 
         <div className="relative self-center md:col-span-7">
           <Reveal delay={0.12}>
-            <div className="plate-frame rounded-[1.5rem] border border-white/15 bg-gradient-to-b from-white/[0.1] to-white/[0.03] p-1.5 shadow-[0_40px_100px_rgba(0,0,0,0.55)]">
-              <div className="relative aspect-[5/4] overflow-hidden rounded-[calc(1.5rem-0.375rem)] border border-white/10 bg-neutral-800 md:aspect-[16/11]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/hero-field.webp"
-                  alt="Technician photographing industrial equipment nameplate in the field"
-                  className="img-bw absolute inset-0 h-full w-full scale-[1.04] object-cover object-[center_35%] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105"
-                />
-                <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-white/10"
-                  aria-hidden
-                />
-                <div
-                  className="pointer-events-none absolute inset-y-0 left-0 w-[18%] bg-gradient-to-r from-[#0b0b0b]/85 via-[#0b0b0b]/3 to-transparent md:w-[12%]"
-                  aria-hidden
-                />
-              </div>
+            <div className="relative mx-auto w-full max-w-[34rem] md:max-w-none">
+              <div
+                className="pointer-events-none absolute left-1/2 top-1/2 h-[72%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.04] blur-3xl"
+                aria-hidden
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/hero-phone.webp"
+                alt="GRIT equipment ID on phone — conveyor unit identified with confidence and fault advice"
+                width={1152}
+                height={864}
+                className="relative z-[1] mx-auto h-auto w-full max-w-full drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.02]"
+              />
             </div>
             <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1">
               <p className="text-sm text-neutral-400">
-                Nameplate capture in the field
+                Equipment ID locked in
               </p>
               <p className="font-mono text-xs text-neutral-500">
-                Manual locked to the unit
+                Unit · confidence · fault path
               </p>
             </div>
           </Reveal>
