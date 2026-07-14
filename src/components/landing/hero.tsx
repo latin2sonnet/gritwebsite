@@ -14,7 +14,7 @@ const STATS = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-6 md:pt-24">
+    <section className="relative overflow-hidden bg-[#eceef2] pt-6 md:pt-24">
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-12 md:gap-8 md:py-16">
         <div className="self-center md:col-span-5">
           <BlurText
@@ -59,7 +59,6 @@ export function Hero() {
         <div className="relative self-center md:col-span-7">
           <Reveal delay={0.12}>
             <div className="relative mx-auto w-full max-w-[34rem] md:max-w-none">
-              {/* Solid light-matched plate: no alpha cutout, natural photo shadow only */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/hero-phone.webp"
@@ -74,14 +73,13 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Dark stats bar - Tidyo-style trust strip under hero */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 pb-16 md:pb-20">
         <Reveal delay={0.2}>
-          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] bg-neutral-950 shadow-[0_20px_50px_rgba(15,17,21,0.18)] sm:grid-cols-4">
+          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/10 shadow-[0_20px_50px_rgba(15,17,21,0.22)] sm:grid-cols-4">
             {STATS.map((item) => (
               <div
                 key={item.k}
-                className="flex flex-col items-center justify-center gap-1 px-4 py-7 text-center sm:py-8"
+                className="flex flex-col items-center justify-center gap-1 bg-neutral-950 px-4 py-7 text-center sm:py-8"
               >
                 <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-500">
                   {item.k}

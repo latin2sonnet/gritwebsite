@@ -5,7 +5,7 @@ import { SITE } from "@/lib/content";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-black/[0.06] bg-white py-12">
+    <footer className="border-t border-black/[0.10] bg-[#f7f8fa] py-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-2.5">
           <BrandMark size={32} className="h-8 w-8" />

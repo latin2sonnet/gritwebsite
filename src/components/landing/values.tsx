@@ -81,7 +81,7 @@ function VerifiedBadge() {
       className={cn(
         "relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full",
         "bg-neutral-950 text-white",
-        "ring-1 ring-black/5 ring-offset-2 ring-offset-white",
+        "ring-1 ring-black/10 ring-offset-2 ring-offset-white",
         "shadow-[0_8px_20px_rgba(15,17,21,0.12)]",
         "transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
         "group-hover:scale-110"
@@ -108,7 +108,7 @@ function VerifiedBadge() {
 
 export function Values() {
   return (
-    <section className="relative overflow-hidden py-28 md:py-40">
+    <section className="relative overflow-hidden bg-[#eceef2] py-28 md:py-40">
       <div className="relative mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="max-w-2xl">
@@ -125,27 +125,30 @@ export function Values() {
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.05}>
+              {/* Double-bezel card shell */}
               <article
                 className={cn(
-                  "group relative h-full min-h-[220px] overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-white p-8 md:p-10",
-                  "shadow-[0_1px_2px_rgba(15,17,21,0.04),0_12px_32px_rgba(15,17,21,0.05)]",
+                  "group relative h-full min-h-[220px] overflow-hidden rounded-[1.25rem] border border-black/[0.10] bg-[#e6e8ed] p-[3px]",
+                  "shadow-[0_1px_2px_rgba(15,17,21,0.04)]",
                   "transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                  "hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(15,17,21,0.1)]"
+                  "hover:-translate-y-1 hover:shadow-[0_2px_4px_rgba(15,17,21,0.05),0_20px_48px_rgba(15,17,21,0.10)]"
                 )}
               >
-                <div className="relative flex items-start justify-between gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-black/[0.06] bg-[#f4f5f7]">
-                    <ValueMark index={i} />
+                <div className="relative flex h-full flex-col rounded-[1.05rem] border border-black/[0.07] bg-white p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] md:p-10">
+                  <div className="relative flex items-start justify-between gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-black/[0.08] bg-[#e6e8ed]">
+                      <ValueMark index={i} />
+                    </div>
+                    <VerifiedBadge />
                   </div>
-                  <VerifiedBadge />
-                </div>
 
-                <h3 className="relative mt-7 text-2xl font-semibold tracking-tight text-neutral-950 md:text-3xl">
-                  {v.title}
-                </h3>
-                <p className="relative mt-4 max-w-[36ch] text-[15px] leading-relaxed text-neutral-500">
-                  {v.body}
-                </p>
+                  <h3 className="relative mt-7 text-2xl font-semibold tracking-tight text-neutral-950 md:text-3xl">
+                    {v.title}
+                  </h3>
+                  <p className="relative mt-4 max-w-[36ch] text-[15px] leading-relaxed text-neutral-500">
+                    {v.body}
+                  </p>
+                </div>
               </article>
             </Reveal>
           ))}

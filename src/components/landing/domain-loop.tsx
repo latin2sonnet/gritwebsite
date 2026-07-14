@@ -3,19 +3,15 @@
 import { LogoLoop } from "@/components/react-bits/LogoLoop";
 import { DOMAINS, PAIN_LINE } from "@/lib/content";
 
-/**
- * Full-bleed equipment ticker under hero.
- * Pain line stays in the content column; marquee spans the full section width.
- */
 export function DomainLoop() {
   const logos = DOMAINS.map((label) => ({
     node: (
       <span className="inline-flex items-center gap-4">
         <span
-          className="h-px w-10 shrink-0 bg-gradient-to-r from-transparent to-neutral-300"
+          className="h-px w-10 shrink-0 bg-gradient-to-r from-transparent to-neutral-400"
           aria-hidden
         />
-        <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.32em] text-neutral-600 md:text-[13px]">
+        <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.32em] text-neutral-700 md:text-[13px]">
           {label}
         </span>
       </span>
@@ -26,7 +22,7 @@ export function DomainLoop() {
 
   return (
     <section
-      className="relative overflow-hidden border-y border-black/[0.06] bg-white"
+      className="relative overflow-hidden border-y border-black/[0.10] bg-white"
       aria-label="Equipment domains"
     >
       <div className="relative mx-auto max-w-6xl px-4 pb-6 pt-10 md:pb-7 md:pt-12">

@@ -45,7 +45,7 @@ export function PinStory() {
   }, [reduce]);
 
   return (
-    <section id="how" className="relative bg-white">
+    <section id="how" className="relative bg-[#eceef2]">
       <div className="mx-auto max-w-6xl px-4 pb-10 pt-28 md:pt-40">
         <h2 className="max-w-2xl text-balance text-3xl font-semibold tracking-[-0.03em] text-neutral-950 md:text-5xl">
           Four moves. Fault cleared at the cabinet.
@@ -61,8 +61,8 @@ export function PinStory() {
             key={step.title}
             className="story-card sticky top-0 flex min-h-[100dvh] items-center justify-center px-4 py-16"
           >
-            <article className="grid w-full max-w-6xl overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-white shadow-[0_24px_64px_rgba(15,17,21,0.12)] md:grid-cols-2">
-              <div className="relative min-h-[280px] md:min-h-[500px]">
+            <article className="grid w-full max-w-6xl overflow-hidden rounded-[1.25rem] border border-black/[0.12] bg-white shadow-[0_2px_4px_rgba(15,17,21,0.05),0_24px_56px_rgba(15,17,21,0.10)] md:grid-cols-2">
+              <div className="relative min-h-[280px] border-black/[0.08] md:min-h-[500px] md:border-r">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={step.image}

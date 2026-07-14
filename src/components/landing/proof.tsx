@@ -16,7 +16,7 @@ export function Proof() {
               Same scenes every plant knows. Different equipment. Same wasted
               walk for the wrong PDF.
             </p>
-            <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-black/[0.06] shadow-[0_12px_32px_rgba(15,17,21,0.08)]">
+            <div className="mt-8 overflow-hidden rounded-[1.25rem] border border-black/[0.10] shadow-[0_1px_2px_rgba(15,17,21,0.05),0_16px_40px_rgba(15,17,21,0.08)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/story-floor.webp"
@@ -26,19 +26,21 @@ export function Proof() {
             </div>
           </Reveal>
 
-          <div className="flex flex-col justify-center gap-0 md:col-span-7">
-            {SCENARIOS.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.06}>
-                <article className="border-t border-black/[0.06] py-7 first:border-t-0 first:pt-0 md:py-8">
-                  <h3 className="text-xl font-semibold tracking-tight text-neutral-950 md:text-2xl">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 max-w-[48ch] text-[15px] leading-relaxed text-neutral-500">
-                    {s.body}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
+          <div className="md:col-span-7">
+            <div className="rounded-[1.25rem] border border-black/[0.10] bg-[#f7f8fa] px-6 shadow-[0_1px_2px_rgba(15,17,21,0.04)] md:px-8">
+              {SCENARIOS.map((s, i) => (
+                <Reveal key={s.title} delay={i * 0.06}>
+                  <article className="border-t border-black/[0.10] py-7 first:border-t-0 md:py-8">
+                    <h3 className="text-xl font-semibold tracking-tight text-neutral-950 md:text-2xl">
+                      {s.title}
+                    </h3>
+                    <p className="mt-3 max-w-[48ch] text-[15px] leading-relaxed text-neutral-500">
+                      {s.body}
+                    </p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </div>

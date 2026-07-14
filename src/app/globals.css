@@ -1,17 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  /* Light SaaS surface system (Tidyo-inspired, GRIT monochrome) */
-  --background: #f4f5f7;
+  /* Calmer wash than pure #f4f5f7 - reduces flashbang */
+  --background: #eceef2;
   --foreground: #0f1115;
   --muted: #6b7280;
   --accent: #0f1115;
   --accent-ink: #ffffff;
-  --surface: #ffffff;
+
+  /* Surface ladder */
+  --surface: #f7f8fa;
   --surface-elevated: #ffffff;
-  --border: rgba(15, 17, 21, 0.08);
-  --ghost: rgba(15, 17, 21, 0.04);
+  --surface-sunken: #e6e8ed;
+  --surface-section-a: #eceef2;
+  --surface-section-b: #f7f8fa;
+  --surface-section-c: #ffffff;
+
+  /* Hairlines strong enough to read in daylight */
+  --border: rgba(15, 17, 21, 0.1);
+  --border-strong: rgba(15, 17, 21, 0.14);
+  --border-soft: rgba(15, 17, 21, 0.07);
+  --ghost: rgba(15, 17, 21, 0.045);
   --steel: #4b5563;
+
+  /* Tinted zinc shadows - never pure black harsh */
+  --shadow-xs: 0 1px 2px rgba(15, 17, 21, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 17, 21, 0.04), 0 8px 24px rgba(15, 17, 21, 0.055);
+  --shadow-md: 0 1px 2px rgba(15, 17, 21, 0.05), 0 16px 40px rgba(15, 17, 21, 0.08);
+  --shadow-lg: 0 2px 4px rgba(15, 17, 21, 0.05), 0 24px 56px rgba(15, 17, 21, 0.1);
+  --shadow-dark: 0 20px 50px rgba(15, 17, 21, 0.22);
+
+  --radius-card: 1.25rem;
+  --radius-card-lg: 1.5rem;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -94,11 +114,48 @@ body {
   filter: grayscale(1) contrast(1.12) brightness(1.02) saturate(0);
 }
 
-/* Soft card elevation shared across sections */
+/* Section bands */
+.section-wash {
+  background: var(--surface-section-a);
+}
+.section-soft {
+  background: var(--surface-section-b);
+}
+.section-paper {
+  background: var(--surface-section-c);
+}
+
+/* Standard elevated plate */
 .soft-card {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Quiet plate on paper sections */
+.soft-card-quiet {
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 12px 32px rgba(15, 17, 21, 0.06);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Double-bezel: outer shell + inner plate */
+.soft-card-bezel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface-sunken);
+  box-shadow: var(--shadow-xs);
+  padding: 3px;
+}
+
+.soft-card-bezel-inner {
+  height: 100%;
+  border-radius: calc(var(--radius-card) - 3px);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .ease-expo {

@@ -38,7 +38,7 @@ export function ScrubManifesto() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden border-y border-black/[0.06] bg-[#f4f5f7] py-28 md:py-40"
+      className="relative overflow-hidden border-y border-black/[0.10] bg-[#f7f8fa] py-28 md:py-40"
       aria-label="Manifesto"
     >
       <div className="relative mx-auto max-w-5xl px-4">
@@ -54,7 +54,7 @@ export function ScrubManifesto() {
         <p className="mt-16 text-center text-2xl font-semibold tracking-tight text-neutral-950 md:text-4xl">
           Clear faults with{" "}
           <span
-            className="mx-1.5 inline-block h-9 w-24 align-middle rounded-full border border-black/10 bg-cover bg-center shadow-sm md:h-11 md:w-32"
+            className="mx-1.5 inline-block h-9 w-24 align-middle rounded-full border border-black/[0.12] bg-cover bg-center shadow-[0_1px_2px_rgba(15,17,21,0.06)] md:h-11 md:w-32"
             style={{
               backgroundImage: "url(/images/inline-vfd.webp)",
               filter: "grayscale(1) contrast(1.1)",
@@ -64,7 +64,7 @@ export function ScrubManifesto() {
           />{" "}
           and{" "}
           <span
-            className="mx-1.5 inline-block h-9 w-24 align-middle rounded-full border border-black/10 bg-cover bg-center shadow-sm md:h-11 md:w-32"
+            className="mx-1.5 inline-block h-9 w-24 align-middle rounded-full border border-black/[0.12] bg-cover bg-center shadow-[0_1px_2px_rgba(15,17,21,0.06)] md:h-11 md:w-32"
             style={{
               backgroundImage: "url(/images/inline-motor.webp)",
               filter: "grayscale(1) contrast(1.1)",

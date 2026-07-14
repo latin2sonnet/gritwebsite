@@ -4,13 +4,10 @@ import { MicroButton } from "@/components/amicro";
 import { SITE } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
 
-/**
- * Dark conversion band on the light page (Tidyo-style contrast block).
- */
 export function CtaBand() {
   return (
-    <section id="access" className="px-4 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] bg-neutral-950 text-white shadow-[0_28px_80px_rgba(15,17,21,0.22)]">
+    <section id="access" className="bg-[#eceef2] px-4 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-[1.5rem] border border-white/10 bg-neutral-950 text-white shadow-[0_28px_80px_rgba(15,17,21,0.24)]">
         <div className="relative px-6 py-16 md:px-16 md:py-20">
           <div className="relative z-10 mx-auto max-w-3xl text-center">
             <Reveal>

@@ -14,7 +14,7 @@ import { SiteFooter } from "@/components/landing/site-footer";
 
 export default function LandingPage() {
   return (
-    <main className="relative w-full max-w-full overflow-x-hidden bg-[#f4f5f7] text-neutral-950">
+    <main className="relative w-full max-w-full overflow-x-hidden bg-[#eceef2] text-neutral-950">
       <SiteHeader />
       <Hero />
       <DomainLoop />

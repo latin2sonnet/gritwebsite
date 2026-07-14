@@ -21,7 +21,7 @@ const GALLERY_ITEMS = [
 
 export function Outcomes() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 md:py-32">
+    <section className="relative overflow-hidden bg-[#f7f8fa] py-24 md:py-32">
       <div className="relative mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="max-w-3xl">
@@ -50,9 +50,12 @@ export function Outcomes() {
       </div>
 
       <div className="relative mx-auto mt-4 max-w-6xl px-4 md:mt-6">
-        <ul className="grid gap-6 border-t border-black/[0.06] pt-8 md:grid-cols-3 md:gap-8">
+        <ul className="grid gap-4 md:grid-cols-3 md:gap-4">
           {OUTCOMES.map((item) => (
-            <li key={item.title}>
+            <li
+              key={item.title}
+              className="rounded-[1.25rem] border border-black/[0.10] bg-white p-5 shadow-[0_1px_2px_rgba(15,17,21,0.04)]"
+            >
               <p className="text-[15px] font-semibold tracking-tight text-neutral-950">
                 {item.title}
               </p>

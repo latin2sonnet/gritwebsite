@@ -59,8 +59,9 @@ export function SiteHeader() {
       >
         <div
           className={cn(
-            "pointer-events-auto mx-auto mt-4 flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border border-black/[0.06] bg-white/85 px-3 pl-4 shadow-[0_8px_32px_rgba(15,17,21,0.08)] backdrop-blur-xl",
-            scrolled && "bg-white/95 shadow-[0_12px_40px_rgba(15,17,21,0.1)]"
+            "pointer-events-auto mx-auto mt-4 flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border border-black/[0.10] bg-white/80 px-3 pl-4 shadow-[0_1px_2px_rgba(15,17,21,0.04),0_12px_36px_rgba(15,17,21,0.08)] backdrop-blur-xl",
+            scrolled &&
+              "bg-white/92 shadow-[0_1px_2px_rgba(15,17,21,0.05),0_16px_40px_rgba(15,17,21,0.10)]"
           )}
         >
           <Link href="/" className="flex items-center gap-2.5">

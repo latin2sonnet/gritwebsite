@@ -9,7 +9,7 @@ export function EquipmentAccordion() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-32 md:py-48">
+    <section className="bg-[#f7f8fa] py-32 md:py-48">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
           <h2 className="max-w-xl text-balance text-3xl font-semibold tracking-[-0.03em] text-neutral-950 md:text-5xl">
@@ -28,7 +28,7 @@ export function EquipmentAccordion() {
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={cn(
-                  "relative overflow-hidden rounded-[1.5rem] border border-black/[0.06] text-left shadow-[0_12px_32px_rgba(15,17,21,0.08)] transition-[flex] duration-500 ease-out",
+                  "relative overflow-hidden rounded-[1.25rem] border border-black/[0.10] text-left shadow-[0_1px_2px_rgba(15,17,21,0.05),0_16px_40px_rgba(15,17,21,0.08)] transition-[flex] duration-500 ease-out",
                   open ? "flex-[3.2]" : "flex-[0.9]"
                 )}
                 aria-expanded={open}
@@ -69,7 +69,7 @@ export function EquipmentAccordion() {
           {EQUIPMENT.map((item) => (
             <article
               key={item.id}
-              className="overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-white shadow-[0_8px_24px_rgba(15,17,21,0.06)]"
+              className="overflow-hidden rounded-[1.25rem] border border-black/[0.10] bg-white shadow-[0_1px_2px_rgba(15,17,21,0.04),0_8px_24px_rgba(15,17,21,0.055)]"
             >
               <div className="relative aspect-[16/10]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -15,7 +15,7 @@ export function Compare() {
 
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           <Reveal>
-            <div className="h-full rounded-[1.5rem] border border-black/[0.06] bg-[#f4f5f7] p-8 md:p-10">
+            <div className="h-full rounded-[1.25rem] border border-black/[0.10] bg-[#f7f8fa] p-8 shadow-[0_1px_2px_rgba(15,17,21,0.04)] md:p-10">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
                 Without GRIT
               </p>
@@ -23,7 +23,7 @@ export function Compare() {
                 {COMPARE.without.map((line) => (
                   <li
                     key={line}
-                    className="flex gap-3 border-b border-black/[0.06] pb-5 text-[15px] leading-relaxed text-neutral-500 last:border-0 last:pb-0"
+                    className="flex gap-3 border-b border-black/[0.08] pb-5 text-[15px] leading-relaxed text-neutral-500 last:border-0 last:pb-0"
                   >
                     <span
                       className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300"
@@ -37,7 +37,7 @@ export function Compare() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="relative h-full overflow-hidden rounded-[1.5rem] border border-neutral-950 bg-neutral-950 p-8 text-white md:p-10 shadow-[0_20px_50px_rgba(15,17,21,0.18)]">
+            <div className="relative h-full overflow-hidden rounded-[1.25rem] border border-neutral-950 bg-neutral-950 p-8 text-white shadow-[0_20px_50px_rgba(15,17,21,0.22)] ring-1 ring-inset ring-white/10 md:p-10">
               <div className="relative">
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
                   With GRIT
