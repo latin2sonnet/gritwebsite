@@ -118,11 +118,11 @@ function MicroInner({
         interaction === "color-morph") &&
       !!Icon2);
   const displayLabel = success && successLabel ? successLabel : label;
-  const iconColor =
-    variant === "primary" ? "text-neutral-950" : "text-current";
+  // Inherit button text color so inverted CTAs (dark fill + white type) stay readable
+  const iconColor = "text-current";
   const accent =
     accentClass ||
-    (variant === "primary" ? "text-neutral-950" : "text-neutral-100");
+    (variant === "primary" ? "text-current" : "text-neutral-100");
 
   if (interaction === "slide-arrow") {
     return (
@@ -240,12 +240,7 @@ function MicroInner({
                 className="absolute inset-0 flex items-center justify-center"
               >
                 {Icon2 && (
-                  <Icon2
-                    className={cn(
-                      "h-4 w-4",
-                      variant === "primary" ? "text-neutral-950" : accent
-                    )}
-                  />
+                  <Icon2 className={cn("h-4 w-4", accent)} />
                 )}
               </motion.span>
             )}
@@ -285,7 +280,7 @@ function MicroInner({
           <Icon1
             className={cn(
               "h-4 w-4",
-              variant === "primary" ? "text-neutral-950" : iconColor,
+              iconColor,
               hovered && variant !== "primary" && cn("fill-current", accent)
             )}
           />
@@ -444,7 +439,7 @@ export function MicroButton(props: MicroButtonProps) {
           className={shell}
         >
           <span className="flex items-center justify-center">
-            <Icon1 className={cn("mr-2 h-4 w-4", variant === "primary" ? "text-neutral-950" : "text-current")} />
+            <Icon1 className="mr-2 h-4 w-4 text-current" />
             <span className="whitespace-nowrap tracking-tight">{label}</span>
           </span>
         </Link>
@@ -485,7 +480,7 @@ export function MicroButton(props: MicroButtonProps) {
         className={cn(shell, disabled && "pointer-events-none opacity-50")}
       >
         <span className="flex items-center justify-center">
-          <Icon1 className={cn("mr-2 h-4 w-4", variant === "primary" ? "text-neutral-950" : "text-current")} />
+          <Icon1 className="mr-2 h-4 w-4 text-current" />
           <span className="whitespace-nowrap tracking-tight">{label}</span>
         </span>
       </button>
