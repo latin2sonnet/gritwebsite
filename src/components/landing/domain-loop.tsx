@@ -54,6 +54,7 @@ export function DomainLoop() {
           gap={56}
           logoHeight={18}
           fadeOut
+          pauseOnHover={false}
           className="w-full py-1"
           ariaLabel="Equipment types GRIT supports"
         />
