@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  /* Lifted off pure noir so steel / dot-grid reads clearer */
+  --background: #0b0b0b;
+  --foreground: #f7f7f5;
+  --muted: #a3a39c;
+  --accent: #f7f7f5;
+  --accent-ink: #0b0b0b;
+  --surface: #131313;
+  --surface-elevated: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.13);
+  --ghost: rgba(255, 255, 255, 0.06);
+  --steel: #d0d0c8;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-steel: var(--steel);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.28);
+  color: #050505;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Soft technical field (hero uses interactive DotGrid instead) */
+.blueprint {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 15% -10%, rgba(255, 255, 255, 0.08), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 95% 10%, rgba(255, 255, 255, 0.05), transparent 50%),
+    radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.03), transparent 40%);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.grain::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.img-bw {
+  filter: grayscale(1) contrast(1.22) brightness(1.18) saturate(0);
+}
+
+/* Machined plate corner marks */
+.plate-frame {
+  position: relative;
+}
+
+.plate-frame::before,
+.plate-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: rgba(255, 255, 255, 0.45);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.plate-frame::before {
+  top: 10px;
+  left: 10px;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+.plate-frame::after {
+  right: 10px;
+  bottom: 10px;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+.live-dot {
+  animation: pulse-line 2.2s ease-in-out infinite;
+}
+
+.ease-expo {
+  transition-timing-function: var(--ease-out-expo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ticker-track,
+  .live-dot {
+    animation: none;
+  }
+}
