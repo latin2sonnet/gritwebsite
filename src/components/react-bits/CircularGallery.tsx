@@ -331,8 +331,8 @@ class Media {
         varying vec2 vUv;
         void main() {
           vUv = uv;
+          // Flat planes only - no time-based Z wave (reads as cheap wobble on marketing sites)
           vec3 p = position;
-          p.z = (sin(p.x * 4.0 + uTime) * 1.5 + cos(p.y * 2.0 + uTime) * 1.5) * (0.1 + uSpeed * 0.5);
           gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
         }
       `,
@@ -457,9 +457,10 @@ class Media {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
       }
     }
+    // Taller portrait cards (closer to option-B mock)
     this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
+    this.plane.scale.y = (this.viewport.height * (1000 * this.scale)) / this.screen.height;
+    this.plane.scale.x = (this.viewport.width * (520 * this.scale)) / this.screen.width;
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
     this.padding = 2;
     this.width = this.plane.scale.x + this.padding;
@@ -559,9 +560,10 @@ class App {
   }
 
   createGeometry() {
+    // Low segment count - cards stay flat (no bend mesh)
     this.planeGeometry = new Plane(this.gl, {
-      heightSegments: 50,
-      widthSegments: 100
+      heightSegments: 1,
+      widthSegments: 1
     });
   }
 
