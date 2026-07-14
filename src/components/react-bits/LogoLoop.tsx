@@ -63,7 +63,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(function LogoLoop({
   pauseOnHover = true,
   hoverSpeed,
   fadeOut = true,
-  fadeOutColor = "#0b0b0b",
+  fadeOutColor: _fadeOutColor,
   ariaLabel = "Scrolling items",
   className,
   style,
@@ -75,6 +75,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(function LogoLoop({
   const [seqWidth, setSeqWidth] = useState(0);
   const [copyCount, setCopyCount] = useState<number>(ANIMATION_CONFIG.MIN_COPIES);
   const [isHovered, setIsHovered] = useState(false);
+  void _fadeOutColor; // legacy prop; fades use CSS mask, not solid color bars
 
   const effectiveHoverSpeed = useMemo(() => {
     if (hoverSpeed !== undefined) return hoverSpeed;
@@ -157,7 +158,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(function LogoLoop({
   const cssVariables = {
     "--logoloop-gap": `${gap}px`,
     "--logoloop-logoHeight": `${logoHeight}px`,
-    ...(fadeOutColor ? { "--logoloop-fadeColor": fadeOutColor } : {}),
   } as React.CSSProperties;
 
   const renderItem = (item: LogoItem, key: React.Key) => {
@@ -183,11 +183,30 @@ export const LogoLoop = React.memo<LogoLoopProps>(function LogoLoop({
     );
   };
 
+  // Soft edge mask (no hard color bars that clash with section backgrounds)
+  const maskStyle: React.CSSProperties = fadeOut
+    ? {
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%)",
+      }
+    : {};
+
   return (
     <div
       ref={containerRef}
-      className={cx("relative overflow-x-hidden", className)}
-      style={{ width: toCssLength(width) ?? "100%", ...cssVariables, ...style }}
+      className={cx(
+        // overflow-hidden both axes - never show a native scrollbar on the ticker
+        "relative overflow-hidden",
+        className
+      )}
+      style={{
+        width: toCssLength(width) ?? "100%",
+        ...cssVariables,
+        ...maskStyle,
+        ...style,
+      }}
       role="region"
       aria-label={ariaLabel}
       onMouseEnter={() => effectiveHoverSpeed !== undefined && setIsHovered(true)}
@@ -195,18 +214,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(function LogoLoop({
         effectiveHoverSpeed !== undefined && setIsHovered(false)
       }
     >
-      {fadeOut && (
-        <>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[clamp(24px,8%,100px)] bg-[linear-gradient(to_right,var(--logoloop-fadeColor,#0b0b0b)_0%,transparent_100%)]"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[clamp(24px,8%,100px)] bg-[linear-gradient(to_left,var(--logoloop-fadeColor,#0b0b0b)_0%,transparent_100%)]"
-          />
-        </>
-      )}
       <div
         ref={trackRef}
         className="relative z-0 flex w-max select-none will-change-transform"
