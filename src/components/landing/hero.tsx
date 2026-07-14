@@ -1,43 +1,14 @@
 "use client";
 
 import BlurText from "@/components/react-bits/BlurText";
-import DotGrid from "@/components/react-bits/DotGrid";
 import { MicroButton } from "@/components/amicro";
 import { Reveal } from "@/components/reveal";
 import { SITE } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-[100dvh] overflow-hidden pt-6 md:pt-24">
-      {/* Interactive DotGrid only - no static CSS lattice masking motion */}
-      <div className="pointer-events-none absolute inset-0 z-0 bg-[#0a0a0a]">
-        <DotGrid
-          className="opacity-100"
-          dotSize={2.4}
-          gap={26}
-          baseColor="#5c5c56"
-          activeColor="#ffffff"
-          proximity={200}
-          glowStrength={1.6}
-          baseOpacity={0.55}
-          activeOpacity={1}
-          returnDuration={0.35}
-          waveSpeed={0.65}
-        />
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(255,255,255,0.08),transparent_45%)]"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_85%_30%,rgba(255,255,255,0.06),transparent_40%)]"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/80 to-transparent"
-          aria-hidden
-        />
-      </div>
-
+    <section className="relative min-h-[100dvh] overflow-hidden pt-6 md:pt-24">
+      {/* Global SiteBackground provides the electrified field */}
       <div className="relative z-10 mx-auto grid min-h-[calc(100dvh-5rem)] max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-12 md:gap-8 md:py-14">
         <div className="self-center md:col-span-5">
           <BlurText
@@ -47,7 +18,7 @@ export function Hero() {
             direction="bottom"
             delay={90}
             stepDuration={0.3}
-            className="max-w-xl text-balance text-[clamp(2.5rem,4.8vw,4rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.55)]"
+            className="max-w-xl text-balance text-[clamp(2.5rem,4.8vw,4rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-white drop-shadow-[0_2px_28px_rgba(0,0,0,0.65)]"
           />
 
           <Reveal delay={0.28}>

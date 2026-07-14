@@ -38,18 +38,9 @@ export function ScrubManifesto() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden border-y border-white/10 bg-white/[0.025] py-28 md:py-40"
+      className="relative overflow-hidden border-y border-white/10 bg-white/[0.02] py-28 md:py-40"
       aria-label="Manifesto"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-        aria-hidden
-      />
       <div className="relative mx-auto max-w-5xl px-4">
         <p className="text-balance text-center text-[clamp(1.65rem,3.6vw,2.9rem)] font-semibold leading-[1.22] tracking-[-0.025em] text-white">
           {words.map((word, i) => (

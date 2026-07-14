@@ -102,20 +102,6 @@ function CheckGlyph() {
 export function Values() {
   return (
     <section className="relative overflow-hidden border-y border-white/10 py-28 md:py-40">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(200,200,190,0.35) 1px, transparent 1.2px)",
-          backgroundSize: "28px 28px",
-        }}
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04),transparent_60%)]"
-        aria-hidden
-      />
-
       <div className="relative mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="max-w-2xl">

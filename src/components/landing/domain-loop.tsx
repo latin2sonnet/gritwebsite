@@ -27,19 +27,9 @@ export function DomainLoop() {
 
   return (
     <section
-      className="relative overflow-hidden border-y border-white/[0.08] bg-[#0e0e0e]"
+      className="relative overflow-hidden border-y border-white/[0.08] bg-white/[0.02]"
       aria-label="Equipment domains"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.04) 0.7px, transparent 1px)",
-          backgroundSize: "20px 20px",
-        }}
-        aria-hidden
-      />
-
       <div className="relative mx-auto max-w-6xl px-4 pb-6 pt-10 md:pb-7 md:pt-12">
         <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-neutral-400 md:text-[15px]">
           {PAIN_LINE}

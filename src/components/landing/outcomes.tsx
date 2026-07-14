@@ -28,16 +28,6 @@ const GALLERY_ITEMS = [
 export function Outcomes() {
   return (
     <section className="relative overflow-hidden py-24 md:py-32">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-25"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.045) 0.8px, transparent 1px)",
-          backgroundSize: "22px 22px",
-        }}
-        aria-hidden
-      />
-
       <div className="relative mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="max-w-3xl">
