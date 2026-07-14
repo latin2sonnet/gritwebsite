@@ -3,8 +3,8 @@
 import DotGrid from "@/components/react-bits/DotGrid";
 
 /**
- * Single fixed electrified field for the whole landing page.
- * Content layers above at z-10+.
+ * Concept D (confirmed): calm idle grid, local electrical surge on hover.
+ * Fixed full-page field under all sections.
  */
 export function SiteBackground() {
   return (
@@ -14,30 +14,27 @@ export function SiteBackground() {
     >
       <DotGrid
         className="absolute inset-0"
-        dotSize={2.15}
+        dotSize={2.05}
         gap={30}
-        baseColor="#4e4e48"
+        baseColor="#454540"
         activeColor="#ffffff"
-        proximity={180}
-        glowStrength={1.55}
-        baseOpacity={0.36}
+        proximity={155}
+        glowStrength={1.4}
+        baseOpacity={0.3}
         activeOpacity={1}
-        returnDuration={0.38}
-        waveSpeed={0.72}
-        pulseStrength={0.58}
-        arcDistance={34}
-        maxArcs={72}
+        returnDuration={0.4}
+        arcDistance={36}
+        maxArcs={40}
       />
-      {/* Readability vignette - keeps type clear at edges */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 75% 70% at 50% 40%, transparent 30%, rgba(11,11,11,0.55) 100%)",
+            "radial-gradient(ellipse 78% 72% at 50% 42%, transparent 35%, rgba(11,11,11,0.5) 100%)",
         }}
       />
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0b0b0b]/50 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0b0b0b]/70 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0b0b0b]/45 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0b0b0b]/65 to-transparent" />
     </div>
   );
 }
