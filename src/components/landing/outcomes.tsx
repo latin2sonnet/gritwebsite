@@ -1,65 +1,95 @@
 "use client";
 
+import CircularGallery from "@/components/react-bits/CircularGallery";
 import { OUTCOMES } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
-import { cn } from "@/lib/utils";
+
+/**
+ * Outcomes as React Bits CircularGallery (option B portrait / curved strip).
+ * Uses GRIT field photography + outcome titles as labels.
+ */
+const GALLERY_ITEMS = [
+  {
+    image: "/images/story-floor.webp",
+    text: OUTCOMES[0].title,
+  },
+  {
+    image: "/images/bento-manual.webp",
+    text: OUTCOMES[1].title,
+  },
+  {
+    image: "/images/bento-chat.webp",
+    text: OUTCOMES[2].title,
+  },
+  // Duplicate set once more so the ring never feels empty at wide viewports
+  {
+    image: "/images/inline-vfd.webp",
+    text: OUTCOMES[0].title,
+  },
+  {
+    image: "/images/inline-motor.webp",
+    text: OUTCOMES[1].title,
+  },
+  {
+    image: "/images/hero-field.webp",
+    text: OUTCOMES[2].title,
+  },
+];
 
 export function Outcomes() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-4">
+    <section className="relative overflow-hidden py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,255,255,0.05) 0.8px, transparent 1px)",
+          backgroundSize: "22px 22px",
+        }}
+        aria-hidden
+      />
+
+      <div className="relative mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="max-w-3xl">
             <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
               Your shift gets shorter when the book is already open.
             </h2>
             <p className="mt-5 max-w-[42ch] text-[15px] leading-relaxed text-neutral-400">
-              Three outcomes plant leads care about: less walking, less wrong
-              docs, less guessing when the code hits the panel.
+              Three outcomes plant leads care about. Drag or scroll the gallery
+              to move through them.
             </p>
           </div>
         </Reveal>
+      </div>
 
-        <div className="mt-12 grid gap-3 md:grid-cols-12">
-          {OUTCOMES.map((item, i) => (
-            <Reveal
-              key={item.title}
-              delay={i * 0.06}
-              className={cn(
-                i === 0 && "md:col-span-7",
-                i === 1 && "md:col-span-5",
-                i === 2 && "md:col-span-12"
-              )}
-            >
-              <article
-                className={cn(
-                  "h-full border border-white/12 bg-[#131313] p-7 md:p-8",
-                  i === 0 && "rounded-2xl md:min-h-[220px]",
-                  i === 1 && "rounded-2xl",
-                  i === 2 &&
-                    "rounded-2xl md:flex md:items-center md:justify-between md:gap-10"
-                )}
-              >
-                <h3
-                  className={cn(
-                    "font-semibold tracking-tight text-white",
-                    i === 0 ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"
-                  )}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  className={cn(
-                    "mt-3 max-w-[36ch] text-[15px] leading-relaxed text-neutral-400",
-                    i === 2 && "md:mt-0 md:max-w-[48ch] md:text-base"
-                  )}
-                >
-                  {item.body}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+      <div className="relative mt-10 h-[420px] w-full md:mt-14 md:h-[560px]">
+        <CircularGallery
+          items={GALLERY_ITEMS}
+          bend={1}
+          textColor="#ffffff"
+          borderRadius={0.06}
+          scrollEase={0.05}
+          scrollSpeed={2}
+          font='600 28px "Geist", system-ui, sans-serif'
+          fontUrl=""
+        />
+      </div>
+
+      <div className="relative mx-auto mt-6 grid max-w-6xl gap-4 px-4 md:mt-10 md:grid-cols-3">
+        {OUTCOMES.map((item) => (
+          <div
+            key={item.title}
+            className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4"
+          >
+            <p className="text-sm font-semibold tracking-tight text-white">
+              {item.title}
+            </p>
+            <p className="mt-2 text-[13px] leading-relaxed text-neutral-400">
+              {item.body}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
