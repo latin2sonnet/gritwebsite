@@ -4,12 +4,6 @@ import CircularGallery from "@/components/react-bits/CircularGallery";
 import { OUTCOMES } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
 
-/**
- * Outcomes as CircularGallery option-B strip:
- * - Premium portrait B&W plates (dedicated outcome-* assets)
- * - bend=0 flat track (no curved wobble)
- * - Shader Z-wave disabled in CircularGallery for still, solid cards
- */
 const GALLERY_ITEMS = [
   {
     image: "/images/outcome-trailer.webp",
@@ -27,14 +21,14 @@ const GALLERY_ITEMS = [
 
 export function Outcomes() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
+    <section className="relative overflow-hidden bg-white py-24 md:py-32">
       <div className="relative mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="max-w-3xl">
-            <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
+            <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-neutral-950 md:text-5xl">
               Your shift gets shorter when the book is already open.
             </h2>
-            <p className="mt-5 max-w-[42ch] text-[15px] leading-relaxed text-neutral-400">
+            <p className="mt-5 max-w-[42ch] text-[15px] leading-relaxed text-neutral-500">
               Three outcomes plant leads care about. Drag the strip or use the
               arrow keys when focused.
             </p>
@@ -46,7 +40,7 @@ export function Outcomes() {
         <CircularGallery
           items={GALLERY_ITEMS}
           bend={0}
-          textColor="#f5f5f5"
+          textColor="#0f1115"
           borderRadius={0.045}
           scrollEase={0.08}
           scrollSpeed={1.6}
@@ -56,13 +50,13 @@ export function Outcomes() {
       </div>
 
       <div className="relative mx-auto mt-4 max-w-6xl px-4 md:mt-6">
-        <ul className="grid gap-6 border-t border-white/10 pt-8 md:grid-cols-3 md:gap-8">
+        <ul className="grid gap-6 border-t border-black/[0.06] pt-8 md:grid-cols-3 md:gap-8">
           {OUTCOMES.map((item) => (
             <li key={item.title}>
-              <p className="text-[15px] font-semibold tracking-tight text-white">
+              <p className="text-[15px] font-semibold tracking-tight text-neutral-950">
                 {item.title}
               </p>
-              <p className="mt-2 text-[13px] leading-relaxed text-neutral-400">
+              <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
                 {item.body}
               </p>
             </li>

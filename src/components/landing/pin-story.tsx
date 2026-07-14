@@ -45,12 +45,12 @@ export function PinStory() {
   }, [reduce]);
 
   return (
-    <section id="how" className="relative">
+    <section id="how" className="relative bg-white">
       <div className="mx-auto max-w-6xl px-4 pb-10 pt-28 md:pt-40">
-        <h2 className="max-w-2xl text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
+        <h2 className="max-w-2xl text-balance text-3xl font-semibold tracking-[-0.03em] text-neutral-950 md:text-5xl">
           Four moves. Fault cleared at the cabinet.
         </h2>
-        <p className="mt-4 max-w-[44ch] text-base leading-relaxed text-neutral-400">
+        <p className="mt-4 max-w-[44ch] text-base leading-relaxed text-neutral-500">
           No office detour. No guessing which PDF is the right one.
         </p>
       </div>
@@ -61,7 +61,7 @@ export function PinStory() {
             key={step.title}
             className="story-card sticky top-0 flex min-h-[100dvh] items-center justify-center px-4 py-16"
           >
-            <article className="grid w-full max-w-6xl overflow-hidden rounded-[1.5rem] border border-white/12 bg-[#101010] shadow-[0_30px_90px_rgba(0,0,0,0.55)] md:grid-cols-2">
+            <article className="grid w-full max-w-6xl overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-white shadow-[0_24px_64px_rgba(15,17,21,0.12)] md:grid-cols-2">
               <div className="relative min-h-[280px] md:min-h-[500px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -69,16 +69,12 @@ export function PinStory() {
                   alt=""
                   className="img-bw absolute inset-0 h-full w-full object-cover"
                 />
-                <div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent to-[#101010]/35 max-md:bg-gradient-to-t max-md:from-[#101010] max-md:to-transparent"
-                  aria-hidden
-                />
               </div>
               <div className="flex flex-col justify-center p-8 md:p-14">
-                <h3 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                <h3 className="text-3xl font-semibold tracking-tight text-neutral-950 md:text-4xl">
                   {step.title}
                 </h3>
-                <p className="mt-5 max-w-[34ch] text-base leading-relaxed text-neutral-400 md:text-lg">
+                <p className="mt-5 max-w-[34ch] text-base leading-relaxed text-neutral-500 md:text-lg">
                   {step.body}
                 </p>
               </div>

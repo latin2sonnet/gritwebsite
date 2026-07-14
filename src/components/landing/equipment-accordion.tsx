@@ -12,12 +12,12 @@ export function EquipmentAccordion() {
     <section className="py-32 md:py-48">
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
-          <h2 className="max-w-xl text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
+          <h2 className="max-w-xl text-balance text-3xl font-semibold tracking-[-0.03em] text-neutral-950 md:text-5xl">
             The iron you already stand in front of.
           </h2>
         </Reveal>
 
-        <div className="mt-14 hidden h-[420px] gap-2 md:flex">
+        <div className="mt-14 hidden h-[420px] gap-3 md:flex">
           {EQUIPMENT.map((item, i) => {
             const open = active === i;
             return (
@@ -28,7 +28,7 @@ export function EquipmentAccordion() {
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={cn(
-                  "relative overflow-hidden rounded-2xl border border-white/10 text-left transition-[flex] duration-500 ease-out",
+                  "relative overflow-hidden rounded-[1.5rem] border border-black/[0.06] text-left shadow-[0_12px_32px_rgba(15,17,21,0.08)] transition-[flex] duration-500 ease-out",
                   open ? "flex-[3.2]" : "flex-[0.9]"
                 )}
                 aria-expanded={open}
@@ -55,7 +55,7 @@ export function EquipmentAccordion() {
                     {item.title}
                   </span>
                   {open && (
-                    <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-neutral-300">
+                    <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-neutral-200">
                       {item.body}
                     </p>
                   )}
@@ -65,11 +65,11 @@ export function EquipmentAccordion() {
           })}
         </div>
 
-        <div className="mt-10 grid gap-3 md:hidden">
+        <div className="mt-10 grid gap-4 md:hidden">
           {EQUIPMENT.map((item) => (
             <article
               key={item.id}
-              className="overflow-hidden rounded-2xl border border-white/10 bg-[#141414]"
+              className="overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-white shadow-[0_8px_24px_rgba(15,17,21,0.06)]"
             >
               <div className="relative aspect-[16/10]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -83,7 +83,7 @@ export function EquipmentAccordion() {
                   {item.title}
                 </h3>
               </div>
-              <p className="p-5 text-sm leading-relaxed text-neutral-400">
+              <p className="p-5 text-sm leading-relaxed text-neutral-500">
                 {item.body}
               </p>
             </article>

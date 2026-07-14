@@ -57,10 +57,15 @@ export function SiteHeader() {
         animate={{ y: hidden ? -100 : 0 }}
         transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="pointer-events-auto mx-auto mt-4 flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border border-white/12 bg-[#0a0a0a]/72 px-3 pl-4 shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+        <div
+          className={cn(
+            "pointer-events-auto mx-auto mt-4 flex h-14 max-w-5xl items-center justify-between gap-4 rounded-full border border-black/[0.06] bg-white/85 px-3 pl-4 shadow-[0_8px_32px_rgba(15,17,21,0.08)] backdrop-blur-xl",
+            scrolled && "bg-white/95 shadow-[0_12px_40px_rgba(15,17,21,0.1)]"
+          )}
+        >
           <Link href="/" className="flex items-center gap-2.5">
             <BrandMark size={32} priority className="h-8 w-8" />
-            <span className="text-[15px] font-semibold tracking-tight text-white">
+            <span className="text-[15px] font-semibold tracking-tight text-neutral-950">
               {SITE.name}
             </span>
           </Link>
@@ -70,10 +75,7 @@ export function SiteHeader() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={cn(
-                  "rounded-full px-3.5 py-2 text-sm text-neutral-300 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/8 hover:text-white",
-                  scrolled && "text-neutral-200"
-                )}
+                className="rounded-full px-3.5 py-2 text-sm text-neutral-500 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-neutral-950/[0.04] hover:text-neutral-950"
               >
                 {l.label}
               </Link>
@@ -96,8 +98,10 @@ export function SiteHeader() {
           items={menuItems}
           socialItems={socialItems}
           displayItemNumbering={false}
-          colors={["#1a1a1a", "#3f3f3f"]}
-          accentColor="#f7f7f5"
+          colors={["#e5e7eb", "#d1d5db"]}
+          accentColor="#0f1115"
+          menuButtonColor="#0f1115"
+          openMenuButtonColor="#0f1115"
         />
       </div>
     </>

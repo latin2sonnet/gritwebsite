@@ -514,7 +514,7 @@ export function StaggeredMenu({
             onClick={closeMenu}
           >
             <BrandMark size={32} className="h-8 w-8" />
-            <span className="text-[15px] font-semibold tracking-tight text-white">
+            <span className="text-[15px] font-semibold tracking-tight text-neutral-950">
               {brandLabel}
             </span>
           </Link>

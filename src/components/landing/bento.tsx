@@ -10,17 +10,17 @@ export function Bento() {
       <div className="mx-auto max-w-6xl px-4">
         <Reveal>
           <div className="flex flex-col gap-5 md:max-w-3xl">
-            <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">
+            <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-neutral-950 md:text-5xl">
               From plate to procedure without the PDF hunt.
             </h2>
-            <p className="max-w-[46ch] text-[15px] leading-relaxed text-neutral-400 md:text-base">
+            <p className="max-w-[46ch] text-[15px] leading-relaxed text-neutral-500 md:text-base">
               Capture, identify, ground the book, answer. Every cell below is a
               job the product does so you stay on the floor.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-3 md:grid-flow-dense md:auto-rows-[minmax(240px,auto)] md:grid-cols-12 md:gap-3">
+        <div className="mt-14 grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-4 md:grid-flow-dense md:auto-rows-[minmax(240px,auto)] md:grid-cols-12 md:gap-4">
           {BENTO.map((cell, i) => (
             <Reveal
               key={cell.id}
@@ -29,7 +29,8 @@ export function Bento() {
             >
               <article
                 className={cn(
-                  "group relative flex h-full min-h-[200px] flex-col overflow-hidden rounded-[1.25rem] border border-white/12 bg-[#101010] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]",
+                  "group relative flex h-full min-h-[200px] flex-col overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-white",
+                  "shadow-[0_1px_2px_rgba(15,17,21,0.04),0_12px_32px_rgba(15,17,21,0.05)]",
                   "image" in cell
                     ? "justify-end"
                     : "justify-between p-6 md:p-7",
@@ -46,15 +47,7 @@ export function Bento() {
                         className="img-bw h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                       />
                       <div
-                        className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10"
-                        aria-hidden
-                      />
-                      <div
-                        className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                        style={{
-                          background:
-                            "radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.12), transparent 55%)",
-                        }}
+                        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"
                         aria-hidden
                       />
                     </div>
@@ -62,7 +55,7 @@ export function Bento() {
                       <h3 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
                         {cell.title}
                       </h3>
-                      <p className="mt-3 max-w-[38ch] text-[15px] leading-relaxed text-neutral-200/90">
+                      <p className="mt-3 max-w-[38ch] text-[15px] leading-relaxed text-white/85">
                         {cell.body}
                       </p>
                     </div>
@@ -70,15 +63,15 @@ export function Bento() {
                 ) : (
                   <>
                     {"mono" in cell && cell.mono ? (
-                      <div className="mb-4 font-mono text-5xl font-semibold tracking-tight text-white/90 md:text-6xl">
+                      <div className="mb-4 font-mono text-5xl font-semibold tracking-tight text-neutral-950 md:text-6xl">
                         {cell.mono}
                       </div>
                     ) : null}
                     <div>
-                      <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">
+                      <h3 className="text-xl font-semibold tracking-tight text-neutral-950 md:text-2xl">
                         {cell.title}
                       </h3>
-                      <p className="mt-3 max-w-[32ch] text-[15px] leading-relaxed text-neutral-400">
+                      <p className="mt-3 max-w-[32ch] text-[15px] leading-relaxed text-neutral-500">
                         {cell.body}
                       </p>
                     </div>

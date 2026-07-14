@@ -21,7 +21,7 @@ export function BrandMark({
       height={size}
       priority={priority}
       className={cn(
-        "rounded-md object-cover ring-1 ring-white/15",
+        "rounded-md object-cover ring-1 ring-black/8",
         className
       )}
     />

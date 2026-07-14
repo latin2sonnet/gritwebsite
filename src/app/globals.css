@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Lifted off pure noir so steel / dot-grid reads clearer */
-  --background: #0b0b0b;
-  --foreground: #f7f7f5;
-  --muted: #a3a39c;
-  --accent: #f7f7f5;
-  --accent-ink: #0b0b0b;
-  --surface: #131313;
-  --surface-elevated: #1a1a1a;
-  --border: rgba(255, 255, 255, 0.13);
-  --ghost: rgba(255, 255, 255, 0.06);
-  --steel: #d0d0c8;
+  /* Light SaaS surface system (Tidyo-inspired, GRIT monochrome) */
+  --background: #f4f5f7;
+  --foreground: #0f1115;
+  --muted: #6b7280;
+  --accent: #0f1115;
+  --accent-ink: #ffffff;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --border: rgba(15, 17, 21, 0.08);
+  --ghost: rgba(15, 17, 21, 0.04);
+  --steel: #4b5563;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -63,8 +63,8 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.28);
-  color: #050505;
+  background: rgba(15, 17, 21, 0.14);
+  color: #0f1115;
 }
 
 .text-balance {
@@ -75,7 +75,6 @@ body {
   text-wrap: pretty;
 }
 
-/* Base ink only - live electrified grid is SiteBackground canvas */
 .blueprint {
   background-color: var(--background);
 }
@@ -91,56 +90,23 @@ body {
   animation-play-state: paused;
 }
 
-.grain::after {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  opacity: 0.045;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
 .img-bw {
-  filter: grayscale(1) contrast(1.22) brightness(1.18) saturate(0);
+  filter: grayscale(1) contrast(1.12) brightness(1.02) saturate(0);
 }
 
-/* Machined plate corner marks */
-.plate-frame {
-  position: relative;
-}
-
-.plate-frame::before,
-.plate-frame::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-color: rgba(255, 255, 255, 0.45);
-  border-style: solid;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.plate-frame::before {
-  top: 10px;
-  left: 10px;
-  border-width: 1.5px 0 0 1.5px;
-}
-
-.plate-frame::after {
-  right: 10px;
-  bottom: 10px;
-  border-width: 0 1.5px 1.5px 0;
-}
-
-.live-dot {
-  animation: pulse-line 2.2s ease-in-out infinite;
+/* Soft card elevation shared across sections */
+.soft-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 12px 32px rgba(15, 17, 21, 0.06);
 }
 
 .ease-expo {
   transition-timing-function: var(--ease-out-expo);
+}
+
+.live-dot {
+  animation: pulse-line 2.2s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -5,23 +5,13 @@ import { SITE } from "@/lib/content";
 import { Reveal } from "@/components/reveal";
 
 /**
- * Intentional high-contrast conversion block: white field on black site.
- * One theme flip for close, not decorative section alternation.
+ * Dark conversion band on the light page (Tidyo-style contrast block).
  */
 export function CtaBand() {
   return (
     <section id="access" className="px-4 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] border border-white/20 bg-[#f3f3f0] text-neutral-950 shadow-[0_40px_100px_rgba(0,0,0,0.45)]">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-[1.75rem] bg-neutral-950 text-white shadow-[0_28px_80px_rgba(15,17,21,0.22)]">
         <div className="relative px-6 py-16 md:px-16 md:py-20">
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.35]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }}
-            aria-hidden
-          />
           <div className="relative z-10 mx-auto max-w-3xl text-center">
             <Reveal>
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-neutral-500">
@@ -29,12 +19,12 @@ export function CtaBand() {
               </p>
             </Reveal>
             <Reveal delay={0.06}>
-              <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.03em] text-neutral-950 md:text-6xl">
+              <h2 className="mt-4 text-balance text-4xl font-semibold tracking-[-0.03em] text-white md:text-6xl">
                 Put the manual in your pocket. Keep the line moving.
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
-              <p className="mx-auto mt-6 max-w-[42ch] text-base leading-relaxed text-neutral-600 md:text-lg">
+              <p className="mx-auto mt-6 max-w-[42ch] text-base leading-relaxed text-neutral-400 md:text-lg">
                 Field first. Book is law. Stay on site. Clear and move. Request
                 access if that is how your crew should work.
               </p>
@@ -48,7 +38,7 @@ export function CtaBand() {
                   iconHover="arrow-right"
                   interaction="slide-arrow"
                   size="lg"
-                  className="!bg-neutral-950 !text-white hover:!bg-neutral-800"
+                  className="!bg-white !text-neutral-950 hover:!bg-neutral-100"
                 />
                 <MicroButton
                   href="#how"
@@ -57,8 +47,8 @@ export function CtaBand() {
                   interaction="pulse"
                   variant="outline"
                   size="lg"
-                  className="!border-neutral-400 !text-neutral-900 hover:!border-neutral-700 hover:!bg-neutral-950/5"
-                  accentClass="text-neutral-950"
+                  className="!border-white/25 !bg-transparent !text-white hover:!border-white/50 hover:!bg-white/5"
+                  accentClass="text-white"
                 />
               </div>
             </Reveal>

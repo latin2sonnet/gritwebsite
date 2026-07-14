@@ -5,18 +5,17 @@ import { DOMAINS, PAIN_LINE } from "@/lib/content";
 
 /**
  * Full-bleed equipment ticker under hero.
- * Pain line stays in the content column; marquee spans the full section width
- * so edges do not look boxed or clipped by max-w-6xl.
+ * Pain line stays in the content column; marquee spans the full section width.
  */
 export function DomainLoop() {
   const logos = DOMAINS.map((label) => ({
     node: (
       <span className="inline-flex items-center gap-4">
         <span
-          className="h-px w-10 shrink-0 bg-gradient-to-r from-transparent to-white/35"
+          className="h-px w-10 shrink-0 bg-gradient-to-r from-transparent to-neutral-300"
           aria-hidden
         />
-        <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.32em] text-neutral-200 md:text-[13px]">
+        <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.32em] text-neutral-600 md:text-[13px]">
           {label}
         </span>
       </span>
@@ -27,16 +26,15 @@ export function DomainLoop() {
 
   return (
     <section
-      className="relative overflow-hidden border-y border-white/[0.08] bg-white/[0.02]"
+      className="relative overflow-hidden border-y border-black/[0.06] bg-white"
       aria-label="Equipment domains"
     >
       <div className="relative mx-auto max-w-6xl px-4 pb-6 pt-10 md:pb-7 md:pt-12">
-        <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-neutral-400 md:text-[15px]">
+        <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-neutral-500 md:text-[15px]">
           {PAIN_LINE}
         </p>
       </div>
 
-      {/* Full viewport width ticker - not constrained by max-w-6xl */}
       <div className="relative w-full pb-10 pt-2 md:pb-12">
         <LogoLoop
           logos={logos}

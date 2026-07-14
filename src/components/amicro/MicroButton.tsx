@@ -64,14 +64,14 @@ const spring = { type: "spring" as const, stiffness: 600, damping: 25 };
 
 const variants: Record<MicroVariant, string> = {
   primary:
-    "bg-neutral-100 text-neutral-950 hover:bg-white shadow-[0_1px_0_rgba(255,255,255,0.35)_inset]",
+    "bg-neutral-950 text-white hover:bg-neutral-800 shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_8px_24px_rgba(15,17,21,0.18)]",
   outline:
-    "border border-white/20 bg-transparent text-white hover:border-white/40 hover:bg-white/5",
-  ghost: "bg-transparent text-neutral-300 hover:bg-white/5 hover:text-white",
-  soft: "bg-white/[0.04] text-neutral-100 hover:bg-white/[0.08] border border-white/10",
+    "border border-neutral-300 bg-white text-neutral-900 hover:border-neutral-500 hover:bg-neutral-50",
+  ghost: "bg-transparent text-neutral-600 hover:bg-neutral-950/5 hover:text-neutral-950",
+  soft: "bg-neutral-100 text-neutral-900 hover:bg-neutral-200/80 border border-neutral-200/80",
   danger:
-    "border border-white/25 bg-white/5 text-neutral-200 hover:bg-white/10 hover:text-white",
-};
+    "border border-neutral-300 bg-white text-neutral-800 hover:bg-neutral-50 hover:text-neutral-950",
+}
 
 const sizes: Record<MicroSize, string> = {
   sm: "h-9 px-3.5 text-sm",
@@ -122,7 +122,7 @@ function MicroInner({
   const iconColor = "text-current";
   const accent =
     accentClass ||
-    (variant === "primary" ? "text-current" : "text-neutral-100");
+    (variant === "primary" ? "text-current" : "text-current");
 
   if (interaction === "slide-arrow") {
     return (
@@ -396,7 +396,7 @@ export function MicroButton(props: MicroButtonProps) {
   const reduce = useReducedMotion();
 
   const shell = cn(
-    "relative inline-flex items-center justify-center rounded-full font-semibold outline-none focus-visible:ring-2 focus-visible:ring-white/40 cursor-pointer",
+    "relative inline-flex items-center justify-center rounded-full font-semibold outline-none focus-visible:ring-2 focus-visible:ring-neutral-950/20 cursor-pointer",
     variants[variant],
     sizes[size],
     fullWidth && "w-full",
