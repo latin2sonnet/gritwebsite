@@ -80,22 +80,35 @@ function ValueMark({ index }: { index: number }) {
   );
 }
 
-function CheckGlyph() {
+/** Verified seal - dark check on white, always readable */
+function VerifiedBadge() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      className="h-4 w-4 text-white"
-      aria-hidden
+    <span
+      className={cn(
+        "relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full",
+        "bg-white text-neutral-950",
+        "ring-1 ring-white/30 ring-offset-2 ring-offset-[#0e0e0e]",
+        "shadow-[0_1px_0_rgba(255,255,255,0.35)_inset,0_8px_20px_rgba(0,0,0,0.35)]",
+        "transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        "group-hover:scale-110 group-hover:ring-white/50"
+      )}
+      aria-label="Confirmed principle"
     >
-      <path
-        d="M5 12.5 9.5 17 19 7"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="h-[18px] w-[18px] text-neutral-950"
+        aria-hidden
+      >
+        <path
+          d="M5 12.5 9.5 17 19 7"
+          stroke="currentColor"
+          strokeWidth="2.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
   );
 }
 
@@ -135,9 +148,7 @@ export function Values() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/12 bg-white/[0.04] transition-colors duration-500 group-hover:border-white/25 group-hover:bg-white/[0.08]">
                     <ValueMark index={i} />
                   </div>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white text-neutral-950 shadow-[0_0_0_0_rgba(255,255,255,0)] transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_24px_rgba(255,255,255,0.15)]">
-                    <CheckGlyph />
-                  </span>
+                  <VerifiedBadge />
                 </div>
 
                 <h3 className="relative mt-7 text-2xl font-semibold tracking-tight text-white md:text-3xl">
